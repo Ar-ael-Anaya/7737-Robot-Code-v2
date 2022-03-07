@@ -26,7 +26,9 @@ public class AutonomousDrive extends CommandBase {
   }
 
   @Override
-  public void execute() {}
+  public void execute() {
+    Robot.m_driveTrain.setMotorSpeed(Constants.m_autonomousXSpeed , Constants.m_autonomousYSpeed , Constants.m_autonomousZSpeed);
+  }
 
 
   @Override
