@@ -13,6 +13,8 @@ public class IntakeShooterDetector extends CommandBase {
   /** Creates a new IntakeShooterDetector. */
   public IntakeShooterDetector() {
     // Use addRequirements() here to declare subsystem dependencies.
+    addRequirements(Robot.m_intake);
+    addRequirements(Robot.m_shooter);
   }
 
   // Called when the command is initially scheduled.

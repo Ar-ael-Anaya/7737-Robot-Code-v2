@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button; 
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequence;
+import frc.robot.Sequences.TeleopSequence;
 import frc.robot.commands.MecanumDriver;
 
 
@@ -29,17 +30,19 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
+    Robot.m_driveTrain.setDefaultCommand(new TeleopSequence());
 
     m_chooser.setDefaultOption("Run Forward", new AutonomousSequence());
     //m_chooser.addOption("Auto Routine Time", new AutonomousTime());
     SmartDashboard.putData(m_chooser);
   }
+
   public RobotContainer() {
     //xButton.whenPressed(new AutonomousSequence());
     // Configure the button bindings
     configureButtonBindings();
   }
+
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
    *

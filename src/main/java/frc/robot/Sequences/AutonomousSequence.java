@@ -14,6 +14,11 @@ public class AutonomousSequence extends SequentialCommandGroup {
   public AutonomousSequence() {
     // Add your commands in the addCommands() call, e.g.
     // addCommands(new FooCommand(), new BarCommand());
-    addCommands(new AutonomousDrive(Constants.Autonomous.m_autonomousTime), new AutonomousDrive(Constants.Autonomous.m_autonomousTime));
+    addCommands(
+      
+    new AutonomousDrive(
+      Constants.Autonomous.m_autonomousTime) 
+    
+     );
   }
 }
