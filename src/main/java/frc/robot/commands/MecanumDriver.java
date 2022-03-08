@@ -45,6 +45,7 @@ public class MecanumDriver extends CommandBase {
 
   @Override
   public boolean isFinished() {
+    Robot.m_driveTrain.setMotorSpeed(0, 0, 0);
     return false;
   }
   
