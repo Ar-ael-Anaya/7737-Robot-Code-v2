@@ -4,14 +4,24 @@
 
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 
 public class Shooter extends SubsystemBase {
-  /** Creates a new Shooter. */
+  private PWMSparkMax topLeft = new PWMSparkMax(Constants.Motors.ShooterMotors.m_topLeft);
+  private PWMSparkMax topRight = new PWMSparkMax(Constants.Motors.ShooterMotors.m_topRight);
+
+  
   public Shooter() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+  public void setMotorSpeed(double axis){
+    topLeft.set(axis * Constants.m_limiter);
+    topRight.set(axis * Constants.m_limiter);
+  }
+
 }

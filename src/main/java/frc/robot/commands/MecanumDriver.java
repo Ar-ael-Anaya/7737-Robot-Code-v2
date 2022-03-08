@@ -27,11 +27,9 @@ public class MecanumDriver extends CommandBase {
 
     double leftStickX = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftStickX)) * (Constants.m_limiter);
     double leftStickY = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftStickY)) * (Constants.m_limiter);
-    double leftStickZ = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftStickX)) * (Constants.m_limiter);
+    double leftStickZ = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightStickX)) * (Constants.m_limiter);
     
-    //double rightStickX = (Robot.m_robotContainer.GetDriverRawAxis(Constants.m_rightStickX))* (Constants.m_limiter);
-    //double rightStickY = Robot.m_robotContainer.GetDriverRawAxis(Constants.m_rightStickY);
-    //double rightStickZ = Robot.m_robotContainer.GetDriverRawAxis(Constants.m_rightStickZ);
+    
  
     Robot.m_driveTrain.setMotorSpeed(leftStickX, leftStickY, leftStickZ);
     
@@ -45,7 +43,6 @@ public class MecanumDriver extends CommandBase {
 
   @Override
   public boolean isFinished() {
-    Robot.m_driveTrain.setMotorSpeed(0, 0, 0);
     return false;
   }
   

@@ -3,15 +3,27 @@
 // the WPILib BSD license file in the root directory of this project.
 
 package frc.robot.subsystems;
-
+import frc.robot.Constants;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+
 
 public class Intake extends SubsystemBase {
-  /** Creates a new Intake. */
+
+
+  private  PWMSparkMax bottomLeft = new PWMSparkMax(Constants.Motors.IntakeMotors.m_bottomLeft);
+  private  PWMSparkMax bottomRight = new PWMSparkMax(Constants.Motors.IntakeMotors.m_bottomRight);
+  
   public Intake() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+  public  void setMotorSpeed(double axis){
+    bottomLeft.set(axis);
+    bottomRight.set(axis);
+  }
+
+
 }

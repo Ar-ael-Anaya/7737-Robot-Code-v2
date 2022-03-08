@@ -7,15 +7,15 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Robot;
-import frc.robot.commands.MecanumDriver;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
-import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
+import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
+//import edu.wpi.first.wpilibj.motorcontrol.PWMVictorSPX;
 
 public class DriveTrain extends SubsystemBase {
-  private PWMVictorSPX frontLeft = new PWMVictorSPX(Constants.Motors.DriveMotors.m_frontleft);
-  private PWMVictorSPX reafLeft = new PWMVictorSPX(Constants.Motors.DriveMotors.m_rearleft);
-  private PWMVictorSPX frontRight = new PWMVictorSPX(Constants.Motors.DriveMotors.m_frontRight);
-  private PWMVictorSPX rearRight = new PWMVictorSPX(Constants.Motors.DriveMotors.m_rearRight);
+  private PWMSparkMax frontLeft = new PWMSparkMax(Constants.Motors.DriveMotors.m_frontleft);
+  private PWMSparkMax reafLeft = new PWMSparkMax(Constants.Motors.DriveMotors.m_rearleft);
+  private PWMSparkMax frontRight = new PWMSparkMax(Constants.Motors.DriveMotors.m_frontRight);
+  private PWMSparkMax rearRight = new PWMSparkMax(Constants.Motors.DriveMotors.m_rearRight);
   
   /** Creates a new DriveTrain. */
   public DriveTrain() {

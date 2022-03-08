@@ -5,6 +5,9 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
+import frc.robot.Robot;
+import frc.robot.subsystems.Intake;
 
 public class IntakeShooterDetector extends CommandBase {
   /** Creates a new IntakeShooterDetector. */
@@ -18,7 +21,22 @@ public class IntakeShooterDetector extends CommandBase {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    double leftTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_leftTrigger)) * (Constants.m_limiter);
+    double rightTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightTrigger)) * (Constants.m_limiter);
+
+    if (leftTrigger != 0){
+      Robot.m_intake.setMotorSpeed(leftTrigger);
+    }
+    else if (rightTrigger != 0){
+      Robot.m_shooter.setMotorSpeed(rightTrigger);
+    }
+    else{
+      Robot.m_intake.setMotorSpeed(0);
+      Robot.m_shooter.setMotorSpeed(0);
+         }
+
+  }
 
   // Called once the command ends or is interrupted.
   @Override

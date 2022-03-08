@@ -13,35 +13,46 @@ public final class Constants {
         public static final int m_rearRight = 3;
 
     }
-/*
+// values change depending on wiring
     public final class IntakeMotors{
-        public static final int m_bottomFront = 0;
-        public static final int m_bottomBack = 4;
+        public static final int m_bottomLeft = 4;
+        public static final int m_bottomRight = 5;
     }
 
     public final class ShooterMotors{
-        public static final int m_topLeft = 5;
-        public static final int m_topRight = 3;
+        public static final int m_topLeft = 6;
+        public static final int m_topRight = 7;
     } 
-  */  
+   
   }
   
    public final class Autonomous{
-        public static final double m_autonomousTime = 1800;
+        public static final double m_autonomousTime = 40;
 }
 
    public final class Controller{
 
     public static final int m_controller = 0;
-
-    public final class Joystick{
-
-     public static final int m_leftStickY = 1;
-     public static final int m_leftStickX = 0;
     
-     public static final int m_rightStickX = 4;
-    //public static final int m_rightStickY = 0;
-   // public static final int m_rightStickZ = 0;
+        public final class Buttons{
+            public static final int m_xButton = 0;
+            public static final int m_yButton = 0;
+            public static final int m_aButton = 0;
+            public static final int m_bButton = 0;
+    }
+      public final class Joystick{
+
+       public static final int m_leftStickY = 1;
+       public static final int m_leftStickX = 0;
+       public static final int m_rightStickX = 4;
+
+       //check value in driver station
+       public static final int m_leftTrigger = 2; 
+       public static final int m_rightTrigger = 3; 
+       
+
+    //public static final int m_rightStickY = 5;
+  
     }
    }
   
@@ -54,9 +65,7 @@ public final class Constants {
 
    
 
-    public final class Buttons{
-        public static final int m_xButton = 0;
-    }
+    
 
-    public static final double m_limiter = .5;
+    public static final double m_limiter = .35;
 }

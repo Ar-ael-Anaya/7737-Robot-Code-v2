@@ -18,7 +18,10 @@ public class RobotContainer {
   private final SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   XboxController controller = new XboxController(Constants.Controller.m_controller);
-  Button xButton = new JoystickButton(controller, Constants.Buttons.m_xButton);
+  Button xButton = new JoystickButton(controller, Constants.Controller.Buttons.m_xButton);
+  Button yButton = new JoystickButton(controller, Constants.Controller.Buttons.m_yButton);
+  Button bButton = new JoystickButton(controller, Constants.Controller.Buttons.m_aButton);
+  Button aButton = new JoystickButton(controller, Constants.Controller.Buttons.m_bButton);
 
 
   public double GetDriverRawAxis(int axis){
