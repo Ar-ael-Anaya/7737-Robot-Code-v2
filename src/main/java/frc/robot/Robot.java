@@ -25,13 +25,14 @@ public class Robot extends TimedRobot {
 
  public static MecanumDrive m_robotDrive;
  public static DriveTrain m_driveTrain = new DriveTrain();
-
- 
-  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
-
  public static IntakeShooter m_intakeShooter = new IntakeShooter();
-
  public static IntakeShooterDetection m_intakeShooterDetection = new IntakeShooterDetection();
+
+
+ public static MecanumDriver m_mecanumDriver = new MecanumDriver();
+
+
+
 
   private Command m_autonomousCommand;
   

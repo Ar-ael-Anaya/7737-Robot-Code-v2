@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequence;
 import frc.robot.Sequences.TeleopSequence;
+import frc.robot.commands.IntakeShooterDetection;
 import frc.robot.commands.MecanumDriver;
 
 
@@ -30,7 +31,9 @@ public class RobotContainer {
   }
 
   private void configureButtonBindings() {
-    Robot.m_driveTrain.setDefaultCommand(new TeleopSequence());
+    Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
+    Robot.m_intakeShooter.setDefaultCommand(new IntakeShooterDetection());
+
 
     m_chooser.setDefaultOption("Run Forward", new AutonomousSequence());
     //m_chooser.addOption("Auto Routine Time", new AutonomousTime());

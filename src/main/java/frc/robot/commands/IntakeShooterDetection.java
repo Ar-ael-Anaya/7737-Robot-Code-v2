@@ -11,7 +11,7 @@ import frc.robot.Robot;
 public class IntakeShooterDetection extends CommandBase {
   /** Creates a new IntakeShooterDetection. */
   public IntakeShooterDetection() {
-    //addRequirements(Robot.m_intakeShooter);
+    addRequirements(Robot.m_intakeShooter);
   }
 
   // Called when the command is initially scheduled.
