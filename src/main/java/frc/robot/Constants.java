@@ -19,12 +19,34 @@ public final class Constants {
         public static final int m_bottomRight = 5;
     }
 
-    public final class ShooterMotors{
-        public static final int m_topLeft = 6;
-        public static final int m_topRight = 7;
+    public final class Elevator{
+
+        public static final int m_armMotor = 5;
+
+
+        boolean burstMode = false;
+        double lastBurstTime = 0;
+        double autoStart = 0;
+        boolean goForAuto = false;
+
+        public class ArmValues{
+            final double armHoldUp = 0.08;
+            final double armHoldDown = 0.13;
+            final double armTravel = 0.5;
+          
+            final double armTimeUp = 0.5;
+            final double armTimeDown = 0.35;
+
+
+            boolean armUp = true; //Arm initialized to up because that's how it would start a match
+        }
+           
+          
     } 
    
   }
+
+  
   
    public final class Autonomous{
         public static final double m_autonomousTime = 40;

@@ -9,9 +9,7 @@ import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.Intake;
-import frc.robot.subsystems.Shooter;
-import frc.robot.commands.IntakeShooterDetector;
+
 import frc.robot.commands.MecanumDriver;
 
 /**
@@ -30,9 +28,7 @@ public class Robot extends TimedRobot {
  
   public static MecanumDriver m_mecanumDriver = new MecanumDriver();
 
-  public static Intake m_intake = new Intake();
-  public static Shooter m_shooter = new Shooter();
-  public static IntakeShooterDetector m_intakeShooterDetector = new IntakeShooterDetector();
+ 
 
   private Command m_autonomousCommand;
   
