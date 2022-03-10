@@ -14,38 +14,26 @@ public final class Constants {
 
     }
 // values change depending on wiring
-    public final class IntakeMotors{
-        public static final int m_bottomLeft = 4;
-        public static final int m_bottomRight = 5;
+    public final class IntakeShooterMotors{
+        public static final int m_intakeShooterMotor = 4;
     }
 
-    public final class Elevator{
-
+    public class ArmMotors{
         public static final int m_armMotor = 5;
-
-
-        boolean burstMode = false;
-        double lastBurstTime = 0;
-        double autoStart = 0;
-        boolean goForAuto = false;
-
-        public class ArmValues{
-            final double armHoldUp = 0.08;
-            final double armHoldDown = 0.13;
-            final double armTravel = 0.5;
-          
-            final double armTimeUp = 0.5;
-            final double armTimeDown = 0.35;
-
-
-            boolean armUp = true; //Arm initialized to up because that's how it would start a match
-        }
-           
-          
-    } 
+    }
    
   }
+  public final static class ArmValues{
 
+    public final static double armHoldUp = 0.08;
+    public final static double armHoldDown = 0.13;
+    public final static double armTravel = 0.5;
+  
+    public  static double armTimeUp = 0.5;
+    public static double armTimeDown = 0.35;      
+    
+         
+} 
   
   
    public final class Autonomous{

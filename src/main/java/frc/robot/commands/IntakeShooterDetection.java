@@ -25,18 +25,14 @@ public class IntakeShooterDetection extends CommandBase {
     double rightTrigger = (Robot.m_robotContainer.GetDriverRawAxis(Constants.Controller.Joystick.m_rightTrigger)) * (Constants.m_limiter);
     
 
-    // If intake and shooter triggerts are flipped, try inverting motors other way
+    // If intake and shooter triggers are flipped, try inverting motors other way
     if (leftTrigger > 0){
       Robot.m_intakeShooter.setIntakeShooterMotorSpeed(leftTrigger);
     }else if (rightTrigger > 0){
       Robot.m_intakeShooter.setIntakeShooterMotorSpeed(-rightTrigger);
     }else{
       Robot.m_intakeShooter.setIntakeShooterMotorSpeed(0);
-    }
-    
-
-
-
+    } 
   }
 
   // Called once the command ends or is interrupted.

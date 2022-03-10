@@ -8,10 +8,11 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.subsystems.DriveTrain;
-import frc.robot.subsystems.IntakeShooter;
 import frc.robot.commands.IntakeShooterDetection;
 import frc.robot.commands.MecanumDriver;
+import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.IntakeShooter;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -27,7 +28,7 @@ public class Robot extends TimedRobot {
  public static DriveTrain m_driveTrain = new DriveTrain();
  public static IntakeShooter m_intakeShooter = new IntakeShooter();
  public static IntakeShooterDetection m_intakeShooterDetection = new IntakeShooterDetection();
-
+public static Arm m_arm = new Arm();
 
  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
 
