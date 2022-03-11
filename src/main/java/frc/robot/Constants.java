@@ -48,10 +48,10 @@ public final class Constants {
     public static final int m_controller = 0;
     
         public final class Buttons{
-            public static final int m_xButton = 0;
-            public static final int m_yButton = 0;
-            public static final int m_aButton = 0;
-            public static final int m_bButton = 0;
+            public static final int m_xButton = 3;
+            public static final int m_yButton = 4;
+            public static final int m_aButton = 1;
+            public static final int m_bButton = 2;
     }
       public final class Joystick{
 
