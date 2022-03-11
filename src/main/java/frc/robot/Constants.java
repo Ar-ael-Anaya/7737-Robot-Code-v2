@@ -23,14 +23,17 @@ public final class Constants {
     }
    
   }
-  public final static class ArmValues{
+  public  static class ArmValues{
 
-    public final static double armHoldUp = 0.08;
-    public final static double armHoldDown = 0.13;
-    public final static double armTravel = 0.5;
+    public  static double armHoldUp = 0.08;
+    public  static double armHoldDown = 0.13;
+    public  static double armTravel = 0.5;
   
     public  static double armTimeUp = 0.5;
-    public static double armTimeDown = 0.35;      
+    public static double armTimeDown = 0.35;  
+    
+    public static double lastBurstTime = 0;
+  public static  boolean armUp = true;
     
          
 } 

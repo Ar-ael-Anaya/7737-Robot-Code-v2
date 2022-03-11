@@ -4,31 +4,36 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.Constants;
 import frc.robot.Robot;
 
-public class ArmSystem extends CommandBase {
- double time = Timer.getFPGATimestamp() ;
-
-
-  public ArmSystem() {
-   addRequirements(Robot.m_arm);
+public class ArmValueUpdater extends CommandBase {
+  /** Creates a new ArmValueUpdater. */
+  public ArmValueUpdater() {
+    addRequirements(Robot.m_arm);
   }
 
   @Override
   public void initialize() {}
 
-  
   @Override
   public void execute() {
-      Robot.m_arm.ArmDetector(time);
     
+      if(!(Constants.ArmValues.armUp)){
+        Constants.ArmValues.lastBurstTime = Robot.m_armSystem.time;
+        Constants.ArmValues.armUp = true;
+      }
+      else if(Constants.ArmValues.armUp){
+        Constants.ArmValues.lastBurstTime = Robot.m_armSystem.time;
+        Constants.ArmValues.armUp = false;
+      }  
     }
-
+ 
   @Override
   public void end(boolean interrupted) {}
 
+ 
   @Override
   public boolean isFinished() {
     return false;

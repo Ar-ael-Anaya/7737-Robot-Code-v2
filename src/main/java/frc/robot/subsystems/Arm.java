@@ -4,6 +4,7 @@
 
 package frc.robot.subsystems;
 
+
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
@@ -11,7 +12,6 @@ import frc.robot.Constants;
 public class Arm extends SubsystemBase {
   PWMSparkMax armMotor = new PWMSparkMax(Constants.Motors.ArmMotors.m_armMotor);
 
-    
 
   public Arm() {
        
@@ -19,10 +19,21 @@ public class Arm extends SubsystemBase {
 
   @Override
   public void periodic() {
-    // This method will be called once per scheduler run
+
   }
-  public void setArmMotorSpeed(double axis){
-    armMotor.set(axis);
-    }
+public void ArmDetector(double m_time){
+  if(Constants.ArmValues.armUp && (m_time - Constants.ArmValues.lastBurstTime < Constants.ArmValues.armTimeUp)){
+  armMotor.set(Constants.ArmValues.armTimeUp);
+}
+else if (Constants.ArmValues.armUp){
+  armMotor.set(Constants.ArmValues.armHoldUp);
+}
+else if(m_time - Constants.ArmValues.lastBurstTime < Constants.ArmValues.armTimeDown){
+  armMotor.set(-(Constants.ArmValues.armTravel));
+}
+else{
+  armMotor.set(-(Constants.ArmValues.armHoldDown));
+  }
+}
 
 }

@@ -11,16 +11,19 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.Button;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 import frc.robot.Sequences.AutonomousSequence;
+import frc.robot.commands.ArmSystem;
+import frc.robot.commands.ArmValueUpdater;
 import frc.robot.commands.IntakeShooterDetection;
 import frc.robot.commands.MecanumDriver;
+import frc.robot.subsystems.IntakeShooter;
 
 
 public class RobotContainer {
   private final SendableChooser<Command> m_chooser = new SendableChooser<>();
 
   XboxController controller = new XboxController(Constants.Controller.m_controller);
-  Button xButton = new JoystickButton(controller, Constants.Controller.Buttons.m_xButton);
-  Button yButton = new JoystickButton(controller, Constants.Controller.Buttons.m_yButton);
+  public Button xButton = new JoystickButton(controller, Constants.Controller.Buttons.m_xButton);
+  public Button yButton = new JoystickButton(controller, Constants.Controller.Buttons.m_yButton);
   Button bButton = new JoystickButton(controller, Constants.Controller.Buttons.m_aButton);
   Button aButton = new JoystickButton(controller, Constants.Controller.Buttons.m_bButton);
 
@@ -32,6 +35,7 @@ public class RobotContainer {
   private void configureButtonBindings() {
     Robot.m_driveTrain.setDefaultCommand(new MecanumDriver());
     Robot.m_intakeShooter.setDefaultCommand(new IntakeShooterDetection());
+    Robot.m_arm.setDefaultCommand(new ArmSystem());
 
 
     m_chooser.setDefaultOption("Run Forward", new AutonomousSequence());
@@ -40,7 +44,7 @@ public class RobotContainer {
   }
 
   public RobotContainer() {
-    //xButton.whenPressed(new AutonomousSequence());
+    xButton.whenPressed(new ArmValueUpdater());
     // Configure the button bindings
     configureButtonBindings();
   }

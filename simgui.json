@@ -2,6 +2,7 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
+      "/LiveWindow/Arm": "Subsystem",
       "/LiveWindow/Intake": "Subsystem",
       "/LiveWindow/IntakeShooter": "Subsystem",
       "/LiveWindow/Shooter": "Subsystem",

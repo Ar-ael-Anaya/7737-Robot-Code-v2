@@ -8,6 +8,8 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.MecanumDrive;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.ArmSystem;
+import frc.robot.commands.ArmValueUpdater;
 import frc.robot.commands.IntakeShooterDetection;
 import frc.robot.commands.MecanumDriver;
 import frc.robot.subsystems.Arm;
@@ -28,9 +30,11 @@ public class Robot extends TimedRobot {
  public static DriveTrain m_driveTrain = new DriveTrain();
  public static IntakeShooter m_intakeShooter = new IntakeShooter();
  public static IntakeShooterDetection m_intakeShooterDetection = new IntakeShooterDetection();
-public static Arm m_arm = new Arm();
+ public static Arm m_arm = new Arm();
 
  public static MecanumDriver m_mecanumDriver = new MecanumDriver();
+ public static ArmSystem m_armSystem = new ArmSystem();
+ //public static ArmValueUpdater m_ArmValueUpdaters = new ArmValueUpdater();
 
 
 
